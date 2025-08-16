@@ -15,8 +15,8 @@ const LandingPage = () => {
   }
   return (
     <>
-    <div className='w-full min-h-full bg-[#FFFCEF]'>
-      <div className='w-[500px] h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left-0'/>
+    <div className=' w-full min-h-screen bg-[#FFFCEF]'>
+      <div className='w-full h-screen bg-amber-200/20 blur-[65px] absolute top-0 left-0'/>
       <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
         <header className='flex justify-between items-center mb-16'>
           <div className='text-xl text-black font-bold'>
@@ -34,7 +34,7 @@ const LandingPage = () => {
             </div>
             <h1 className='text-5xl text-black font-medium mb-6 leading-tight'>Ace Interviews with <br /><span className='text-transparent bg-clip-text bg-[radial-gradient(circle,_#FF9324_0%,_#FF9324_0%,_#FCD760_100%)] bg-[length:200%_200%] animate-text-shine font-semibold'>AI-Powered</span>{" "} Learning</h1>
           </div>
-          <div className='w-full md:w-1/2'>
+          <div className='w-full  md:w-1/2'>
             <p className='text-[17px] text-gray-900 mr-0 md:mr-20 mb-6'>
               Get role-specific questions, expand answers when you need them, dive deeper into concepts, and organize everything your way. From preparation to mastery - your ultimate interview toolkit is here.
             </p>

@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router,Routes, Route  } from 'react-router-dom';
 import {Toaster} from 'react-hot-toast';
 import Login from './pages/Auth/Login';
-import Signup from './pages/Auth/Signup';
+import Signup from './pages/Auth/SignUp';
 import Dashboard from './pages/Home/Dashboard';
 import LandingPage from './pages/LandingPage';
 import InterviewPrep from './pages/InterviewPrep/InterviewPrep';
