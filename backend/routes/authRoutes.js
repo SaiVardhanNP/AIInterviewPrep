@@ -2,14 +2,14 @@ import express from 'express';
 import { registerUser, loginUser, getUserProfile } from '../controllers/authController.js';
 import protect from '../middleware/authMiddleware.js';
 import upload from '../middleware/uploadMiddleware.js';
-export const router = express.Router();
+export const authRouter = express.Router();
 
-router.post('/register', registerUser);
-router.post('/login', loginUser);
-router.get('/profile', protect, getUserProfile);
+authRouter.post('/register', registerUser);
+authRouter.post('/login', loginUser);
+authRouter.get('/profile', protect, getUserProfile);
 
 
-router.post("/upload-image",upload.single("image"), async (req, res) => {
+authRouter.post("/upload-image",upload.single("image"), async (req, res) => {
     if(!req.file) {
         return res.status(400).json({ message: "No file uploaded" });
     }
