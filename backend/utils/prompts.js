@@ -31,10 +31,10 @@ export const conceptExplainPrompt = (question) => `
 You are an AI trained to explain interview concepts in a beginner-friendly way.
 
 Task:
-- Explain the following interview question clearly and concisely (not more than 6 sentences).
+- Explain the following interview question clearly and concisely.
 - Question: "${question}"
 - Use simple language.
-- If a code example helps, show only a small snippet.
+- If a code example helps, give an example program.
 - At the end, provide a short and clear title that summarizes the concept.
 
 Output Format:

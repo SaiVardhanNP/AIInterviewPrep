@@ -10,6 +10,9 @@ import RoleInfoHeader from './RoleInfoHeader';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import QuestionCard from '../../components/cards/QuestionCard';
+import AIResponsePreview from './AIResponsePreview';
+import Drawer from '../../components/Drawer';
+import SkeletonLoader from '../../components/loader/SkeletonLoader';
 
 const InterviewPrep = () => {
   const {sessionId}=useParams();
@@ -37,9 +40,48 @@ const InterviewPrep = () => {
 
   // console.log(sessionData);
 
-  const generateConceptExplanation=async(question)=>{};
+  const generateConceptExplanation=async(question)=>{
+    try{
+      setErrorMsg("");
+      setExplanation(null);
+      setIsLoading(true);
+      setOpenLeanMoreDrawer(true);
 
-  const toggleQuestionPinStatus=async(questionId)=>{};
+      const response=await axiosInstance.post(
+        API_PATHS.AI.GENERATE_EXPLANATION,
+        {
+          question,
+        }
+      );
+      if(response.data){
+        setExplanation(response.data);
+      }
+    }
+    catch(error){
+      setExplanation(null);
+      setError("Failed to generate explanation. Try again later!");
+      console.error("Error",error);
+    }
+    finally{
+      setIsLoading(false);
+    }
+  };
+
+  const toggleQuestionPinStatus=async(questionId)=>{
+    try{
+      const response=await axiosInstance.post(
+        API_PATHS.QUESTION.PIN(questionId)
+      );
+      console.log(response);
+
+      if(response.data && response.data.question){
+        fetchSessionDetailsById();
+      }
+    }
+    catch(error){
+      console.error("Error",error);
+    }
+  };
 
   const uploadMoreQuestions=async()=>{};
 
@@ -63,7 +105,7 @@ const InterviewPrep = () => {
       }
       />
       <div className='container mx-auto pt-4 pb-4 px-4 md:px-0'>
-        <h2 className='text-lg font-semibold color-black'>Interview Q & A</h2>
+        <h2 className='text-lg font-semibold color-black'>Interview Q&A</h2>
         <div className='grid grid-cols-12 gap-4 mt-5 mb-10'>
           <div className={`col-span-12 ${openLeanMoreDrawer ? "md:col-span-7":"md:col-span-8"}`}>
             <AnimatePresence>
@@ -86,6 +128,27 @@ const InterviewPrep = () => {
           </div>
         </div>
       </div>
+      <Drawer 
+      isOpen={openLeanMoreDrawer}
+      onClose={()=>setOpenLeanMoreDrawer(false)}
+      title={!isLoading && explanation?.title}
+      >
+        {
+          errorMsg && (
+            <p className='flex gap-2 text-sm text-amber-600 font-medium'>
+              <LuCircleAlert className='mt-1'/>{errorMsg}
+            </p>
+          )
+        }
+        {
+          isLoading && <SkeletonLoader/>
+        }
+        {
+          !isLoading && explanation && (
+            <AIResponsePreview content={explanation?.explanation}/>
+          )
+        }
+      </Drawer>
     </DashboardLayout>
   )
 }
