@@ -8,7 +8,9 @@ import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { FaMonument } from 'react-icons/fa';
 import moment from 'moment';
+import Modal from "../../components/Modal"
 import SummaryCard from '../../components/cards/SummaryCard';
+import CreateSessionForm from './CreateSessionForm';
 
 const Dashboard = () => {
   const navigate=useNavigate();
@@ -49,7 +51,7 @@ const Dashboard = () => {
           questions={data?.questions?.length || "-"}
           description={data?.description || ""}
           lastUpdated={
-            data?.updatedAt ? moment(data.updatedAt).format("DO MM YYYY")
+            data?.updatedAt ? moment(data.updatedAt).format("Do MMM YYYY")
             :""
           }
           onSelect={()=>navigate(`/interview-prep/${data?._id}`)}
@@ -63,6 +65,11 @@ const Dashboard = () => {
           Add New
         </button>
       </div>
+      <Modal isOpen={openCreateModal} onClose={()=>{setOpenCreateModal(false);}} hideHeader>
+        <div>
+          <CreateSessionForm/>
+        </div>
+      </Modal>
     </DashboardLayout>
   )
 }

@@ -4,6 +4,7 @@ import Session from "../models/Session.js";
 export const addQuestionsToSession = async (req, res) => {
     try{
             const { sessionId, questions} = req.body;
+            // console.log(questions);
             if (!sessionId || !questions || !Array.isArray(questions)) {
                 return res.status(400).json({ message: "Invalid request data" });
             }

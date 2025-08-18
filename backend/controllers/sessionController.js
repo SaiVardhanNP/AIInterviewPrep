@@ -18,7 +18,7 @@ export const createSession = async (req, res) => {
       questions.map(async (q) => {
         const question = await Question.create({
           session: session._id,
-          text: q.question,
+          question: q.question,
           answer: q.answer,
         });
         return question._id;

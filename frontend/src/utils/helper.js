@@ -5,7 +5,7 @@ export const validateEmail = (email) => {
 
 
 export const getInitials = (title) => {
-    console.log(title);
+    // console.log(title);
   if (!title) return "";
   const words = String(title.role).trim().split(/\s+/); // handles multiple spaces
   const initials = words.map(word => word[0]?.toUpperCase()).join("");

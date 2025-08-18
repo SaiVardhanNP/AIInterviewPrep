@@ -9,7 +9,7 @@ Task:
 - Focus Topics: ${topicsToFocus}
 - Write ${numberOfQuestions} interview questions.
 - For each question:
-  - Keep the answer **short, clear, and beginner-friendly** (2–4 sentences max).
+  - Keep the answer **short, clear, and beginner-friendly**.
   - If a code example is needed, show only a **very small snippet** (not full apps).
   - Avoid long paragraphs or over-explaining.
   - Use simple language.

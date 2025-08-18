@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const questionSchema = new mongoose.Schema(
   {
     session: { type: mongoose.Schema.Types.ObjectId, ref: "Session" },
-    question: String,
+    question:{ type:String},
     answer: String,
     note: String,
     isPinned: { type: Boolean, default: false },
