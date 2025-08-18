@@ -55,7 +55,7 @@ const LandingPage = () => {
       </div>
       <div className='w-full min-h-full relative z-10 '>
         <div>
-          <section className='flex items-center justify-center -mt-36'>
+          <section className='flex items-center justify-center -mt-36 md:-mt-96'>
             <img src="/hero-img.png" alt="HERO IMAGE" className='w-[80vw] border border-amber-400 rounded-lg' />
           </section>
         </div>
@@ -94,7 +94,9 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className='text-center backdrop-blur-md text-sm text-secondary mt-5 bg-gray-50  p-5'>Made with Love .. VardhanNP</div>
+        <div className="text-center backdrop-blur-md text-sm text-gray-600 mt-5 bg-gray-50 p-5 border-gray-50 border-t">
+          © {new Date().getFullYear()} VardhanNP. All rights reserved.
+        </div>
       </div>
 
       <Modal isOpen={openAuthModal} onClose={() => {
