@@ -1,20 +1,17 @@
 import React from 'react'
-import { RotatingLines } from 'react-loader-spinner'
+import { ClipLoader } from "react-spinners";
 
 const SpinnerLoader = () => {
     return (
         <div style={{ textAlign: "center" }}>
-            <RotatingLines
-                visible={true}
-                height="16"
-                width="26"
-                color="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                ariaLabel="rotating-lines-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-            />
+            <ClipLoader
+        color={color}
+        loading={loading}
+        cssOverride={override}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
         </div>
     )
 }
