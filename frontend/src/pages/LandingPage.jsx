@@ -26,10 +26,11 @@ const LandingPage = () => {
       <div className=' w-full min-h-screen bg-[#FFFCEF]'>
         <div className='w-full h-screen bg-amber-200/20 blur-[65px] absolute top-0 left-0' />
         <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
-          <header className='flex justify-between items-center mb-16'>
-            <div className='text-xl text-black font-bold'>
+          <header className='flex justify-between items-center -mt-10 mb-16'>
+            {/* <div className='text-xl text-black font-bold'>
               Interview Prep AI
-            </div>
+            </div> */}
+            <img src="logo.png" className='w-60' alt="" />
             {user ? (<ProfileCard />) :
               (<button className='bg-linear-to-r from-[#FF9324] to-[#e99a4b] text-sm rounded-full hover:bg-black hover:text-white transition-colors cursor-pointer border border-white text-white px-7 py-2.5 font-semibold' onClick={() => setOpenAuthModal(true)} >Login/Sign Up</button>)
             }
@@ -55,7 +56,7 @@ const LandingPage = () => {
       </div>
       <div className='w-full min-h-full relative z-10 '>
         <div>
-          <section className='flex items-center justify-center -mt-36 md:-mt-96'>
+<section className="flex items-center justify-center -mt-36 md:-mt-102 lg:-mt-96 xl:-mt-96">
             <img src="/hero-img.png" alt="HERO IMAGE" className='w-[80vw] border border-amber-400 rounded-lg' />
           </section>
         </div>
