@@ -1,3 +1,0 @@
-[nixpacks]
-[nixpacks.plan]
-providers = ["node@20"]
