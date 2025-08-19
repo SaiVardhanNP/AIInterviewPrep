@@ -1,4 +1,4 @@
-export const BASE_URL="https://ai-interview-prep-mj5q.vercel.app"
+export const BASE_URL="https://ai-interview-prep-backend-seven.vercel.app"
 
 
 export const API_PATHS={
