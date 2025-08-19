@@ -1,4 +1,4 @@
-export const BASE_URL="http://localhost:3000"
+export const BASE_URL="https://ai-interview-prep-mj5q.vercel.app"
 
 
 export const API_PATHS={
