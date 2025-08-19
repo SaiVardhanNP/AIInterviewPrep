@@ -30,7 +30,7 @@ const LandingPage = () => {
             {/* <div className='text-xl text-black font-bold'>
               Interview Prep AI
             </div> */}
-            <img src="logo.png" className='w-60' alt="" />
+            <img src="logo.png" className='w-60 -ml-7' alt="" />
             {user ? (<ProfileCard />) :
               (<button className='bg-linear-to-r from-[#FF9324] to-[#e99a4b] text-sm rounded-full hover:bg-black hover:text-white transition-colors cursor-pointer border border-white text-white px-7 py-2.5 font-semibold' onClick={() => setOpenAuthModal(true)} >Login/Sign Up</button>)
             }
@@ -49,14 +49,24 @@ const LandingPage = () => {
               <p className='text-[17px] text-gray-900 mr-0 md:mr-20 mb-6'>
                 Get role-specific questions, expand answers when you need them, dive deeper into concepts, and organize everything your way. From preparation to mastery - your ultimate interview toolkit is here.
               </p>
-              <button className='bg-black text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-yellow-100 hover:text-black border border-yellow-50 hover:border-yellow-300 transition-colors cursor-pointer' onClick={handleCTA}>Get Started</button>
+              <div className="w-full flex max-sm:justify-center ">
+  <button
+    className="bg-black text-sm font-semibold text-white px-7 py-2.5 rounded-full 
+               hover:bg-yellow-100 hover:text-black border border-yellow-50 
+               hover:border-yellow-300 transition-colors cursor-pointer"
+    onClick={handleCTA}
+  >
+    Get Started
+  </button>
+</div>
+
             </div>
           </div>
         </div>
       </div>
       <div className='w-full min-h-full relative z-10 '>
         <div>
-<section className="flex items-center justify-center -mt-36 md:-mt-102 lg:-mt-96 xl:-mt-96">
+<section className="flex items-center justify-center md:-mt-76">
             <img src="/hero-img.png" alt="HERO IMAGE" className='w-[80vw] border border-amber-400 rounded-lg' />
           </section>
         </div>
