@@ -8,7 +8,7 @@ import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import uploadImage from '../../utils/uploadImage';
 
-const Signup = ({setCurrentPage}) => {
+const SignUp = ({setCurrentPage}) => {
   const [profilePic,setProfilePic]=useState(null);
   const [fullName,setFullName]=useState("");
   const [email,setEmail]=useState("");
@@ -90,4 +90,4 @@ const Signup = ({setCurrentPage}) => {
   )
 }
 
-export default Signup
+export default SignUp
